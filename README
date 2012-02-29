@@ -1,4 +1,18 @@
-This is your new Play 2.0 application
+Play2 + Scala + Ebean
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+该程序用来测试Ebean是否可以在Play2中与Scala一同使用。
+
+models下有一些用Java定义的Ebean model, test下有一些用Scala写成的测试类。
+
+运行play test，将会报以下错误：
+
+[info]   Cause: java.lang.IllegalStateException: Class [class play.db.ebean.Model] is enhanced and [class models.Question] is not - (you can not mix!!)
+
+根据该帖子的内容：https://groups.google.com/forum/#!topic/play-framework/Lfa6VzNqOVE/discussion
+
+需要在Build.sbt中增加：
+
+    ebeanEnabled := true
+
+我已经加了，但还是有同样的错误。
