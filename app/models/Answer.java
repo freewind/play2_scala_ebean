@@ -21,17 +21,13 @@ public class Answer extends Model {
 	@ManyToOne
 	public Question question;
 
-	@ManyToOne
-	public User user;
-
 	public Date createdAt = new Date();
 
-	public static Finder<Long, Answer> find = new Finder<Long, Answer>(Long.class, Answer.class);
+	public static Model.Finder<Long, Answer> find = new Finder<Long, Answer>(Long.class, Answer.class);
 
-	public Answer(String content, Question question, User user) {
+	public Answer(String content, Question question) {
 		this.content = content;
 		this.question = question;
-		this.user = user;
 	}
 
 }

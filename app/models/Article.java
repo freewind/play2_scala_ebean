@@ -16,9 +16,6 @@ public class Article extends Model {
 
 	public String content;
 
-	@ManyToOne
-	public User user;
-
-	public static Finder<Long, Article> find = new Finder<Long, Article>(Long.class, Article.class);
+	public static Model.Finder<Long, Article> find = new Finder<Long, Article>(Long.class, Article.class);
 
 }

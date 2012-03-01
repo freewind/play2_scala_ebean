@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,10 +24,7 @@ public class Question extends Model {
 
 	public String content;
 
-	@ManyToOne
-	public User user;
-
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	public List<Answer> answers;
 
 	@ManyToMany(cascade = CascadeType.ALL)
@@ -37,12 +33,11 @@ public class Question extends Model {
 
 	public Date createdAt = new Date();
 
-	public static Finder<Long, Question> find = new Finder<Long, Question>(Long.class, Question.class);
+	public static Model.Finder<Long, Question> find = new Finder<Long, Question>(Long.class, Question.class);
 
-	public Question(String title, String content, User user) {
+	public Question(String title, String content) {
 		this.title = title;
 		this.content = content;
-		this.user = user;
 	}
 
 }
