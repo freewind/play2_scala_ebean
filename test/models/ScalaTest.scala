@@ -17,11 +17,11 @@ class ScalaTest extends FlatSpec with ShouldMatchers {
 
   protected def fakeApp = FakeApplication(additionalConfiguration = Map())
 
-  "Users" should "be queried" in {
-    running(fakeApp) {
-      val users = User.find.where().findList()
-      println(users.size())
-    }
-  }
+//  "Users" should "be queried" in {
+//    running(fakeApp) {
+//      val users = User.find.where().findList()
+//      println(users.size())
+//    }
+//  }
 
 }
