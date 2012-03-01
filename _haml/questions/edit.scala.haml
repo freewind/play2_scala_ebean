@@ -1,0 +1,12 @@
+@(question:Question)
+
+@main("Edit question: "+ question.title) {
+
+form action="@routes.Questions.update(question.id.toString)" method="post"
+	div > label | Title:
+	div > input type="text" name="title" size="50" value="@question.title" /
+	div > label | Content:
+	div > textarea name="content" rows="8" cols="50" | @question.content
+	div > input type="submit" value="submit" /
+
+}

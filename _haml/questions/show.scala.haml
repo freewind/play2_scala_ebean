@@ -1,0 +1,42 @@
+@(question: Question)
+
+:css
+.question {
+}
+.question .title {
+	font-size: 20px;
+	line-height: 40px;
+	color: #336699;
+}
+.question .content {
+	color: #666;
+}
+.answer_count {
+	line-height: 60px;
+}
+.answer {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #EEE;
+}
+:end
+
+@main(question.title) {
+	.question
+		.title | @question.title
+		.content | @question.content
+
+	.answer_count
+		span | There are @question.answers.size answers
+		a href="@routes.Answers.clear(question.id.toString)" | delete all
+	.answers
+		@for( answer <- question.answers ) {
+			.answer
+				@answer.content
+				div > a href="@routes.Answers.delete(answer.id.toString)" | delete
+		}
+
+	form action="@routes.Answers.answer(question.id.toString)" method="post"
+		textarea name="content" cols="60" rows="8" |
+		input type="submit" value="Answer" /
+}

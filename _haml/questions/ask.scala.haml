@@ -1,0 +1,10 @@
+@main("") {
+
+form action="@routes.Questions.create" method="post"
+	div > label | Title:
+	div > input type="text" name="title" size="50" /
+	div > label | Content:
+	div > textarea name="content" rows="8" cols="50" |
+	div > input type="submit" value="submit" /
+
+}
