@@ -95,6 +95,6 @@
 	<classpathentry kind="lib" path="E:/java/Play20/repository/cache/org.sonatype.sisu.inject/cglib/jars/cglib-2.2.1-v20090111.jar"/>
 	<classpathentry kind="lib" path="E:/java/Play20/repository/cache/asm/asm/jars/asm-3.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="X:/WORKSPACE_PLAY/play2_scala_ebean/target/scala-2.9.1/classes_managed"/>
+	<classpathentry kind="lib" path="target/scala-2.9.1/classes_managed"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
