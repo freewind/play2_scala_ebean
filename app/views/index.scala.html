@@ -16,13 +16,10 @@
 	@for( question <- questions ) {
 	<div class="question">
 		<div class="title">
-			<a href="@routes.Questions.show(question.id.toString)">@question.title</a>
+			<a href="@routes.Questions.show(question.id)">@question.title</a>
 		</div>
 		<div class="content">
 			@question.content
-		</div>
-		<div class="ops">
-			<a href="@routes.Questions.edit(question.id.toString)">Edit</a>
 		</div>
 	</div>
 
