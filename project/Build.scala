@@ -7,8 +7,6 @@ object ApplicationBuild extends Build {
   val appName = "play2_scala_ebean"
   val appVersion = "1.0-SNAPSHOT"
 
-  ebeanEnabled := true
-
   val appDependencies = Seq(
     // Add your project dependencies here,
     // "commons-io" % "commons-io" % "2.1",
@@ -17,6 +15,7 @@ object ApplicationBuild extends Build {
   val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
     // Add your own project settings here
     // scalatest will work if we add the following line
+    ebeanEnabled := true,
     testOptions in Test := Nil)
 
 }
