@@ -18,12 +18,12 @@ import play.db.ebean.Model;
 public class Comment extends Model {
 
 	@Id
-	public Long id;
+	public  Long id;
 
-	public String content;
+	public  String content;
 
-	public Date createdAt = new Date();
+	public  Date createdAt = new Date();
 
-	public Date updatedAt;
+	public  Date updatedAt;
 
 }

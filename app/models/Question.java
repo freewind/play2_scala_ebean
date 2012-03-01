@@ -12,6 +12,8 @@ import javax.persistence.Table;
 
 import play.db.ebean.Model;
 
+import com.avaje.ebean.annotation.PrivateOwned;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "questions")
@@ -24,7 +26,8 @@ public class Question extends Model {
 
 	public String content;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+	@PrivateOwned
 	public List<Answer> answers;
 
 	@ManyToMany(cascade = CascadeType.ALL)

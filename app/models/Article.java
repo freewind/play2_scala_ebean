@@ -1,8 +1,8 @@
 package models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import play.db.ebean.Model;
@@ -12,9 +12,9 @@ import play.db.ebean.Model;
 public class Article extends Model {
 
 	@Id
-	public Long id;
+	public  Long id;
 
-	public String content;
+	public  String content;
 
 	public static Model.Finder<Long, Article> find = new Finder<Long, Article>(Long.class, Article.class);
 
