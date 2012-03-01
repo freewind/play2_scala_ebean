@@ -5,5 +5,16 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET		/questions/ask				controllers.Questions.ask
+GET		/questions/show/:id			controllers.Questions.show(id)
+POST	/questions/create			controllers.Questions.create
+GET		/questions/delete/:id		controllers.Questions.delete(id)
+GET		/questions/edit/:id			controllers.Questions.edit(id)
+POST	/questions/update/:id		controllers.Questions.update(id)
+
+POST	/answers/create/:questionId	controllers.Answers.answer(questionId)
+GET		/answers/delete/:id			controllers.Answers.delete(id)
+GET		/answers/clear/:questionId	controllers.Answers.clear(questionId)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
