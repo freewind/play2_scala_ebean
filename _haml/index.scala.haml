@@ -16,11 +16,9 @@
 	@for( question <- questions ) {
 	.question
 		.title
-			a href="@routes.Questions.show(question.id.toString)" | @question.title
+			a href="@routes.Questions.show(question.id)" | @question.title
 		.content
 			@question.content
-		.ops
-			a href="@routes.Questions.edit(question.id.toString)" | Edit
 
 	}
 }

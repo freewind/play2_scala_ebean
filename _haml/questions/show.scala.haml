@@ -25,18 +25,20 @@
 	.question
 		.title | @question.title
 		.content | @question.content
+		.ops
+			a href="@routes.Questions.edit(question.id)" | Edit
 
 	.answer_count
 		span | There are @question.answers.size answers
-		a href="@routes.Answers.clear(question.id.toString)" | delete all
+		a href="@routes.Answers.clear(question.id)" | delete all
 	.answers
 		@for( answer <- question.answers ) {
 			.answer
 				@answer.content
-				div > a href="@routes.Answers.delete(answer.id.toString)" | delete
+				div > a href="@routes.Answers.delete(answer.id)" | delete
 		}
 
-	form action="@routes.Answers.answer(question.id.toString)" method="post"
+	form action="@routes.Answers.answer(question.id)" method="post"
 		textarea name="content" cols="60" rows="8" |
 		input type="submit" value="Answer" /
 }

@@ -2,7 +2,7 @@
 
 @main("Edit question: "+ question.title) {
 
-form action="@routes.Questions.update(question.id.toString)" method="post"
+form action="@routes.Questions.update(question.id)" method="post"
 	div > label | Title:
 	div > input type="text" name="title" size="50" value="@question.title" /
 	div > label | Content:
