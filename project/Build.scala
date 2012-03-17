@@ -14,8 +14,8 @@ object ApplicationBuild extends Build {
 
   val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
     // Add your own project settings here
-    // scalatest will work if we add the following line
     ebeanEnabled := true,
+    // scalatest will work if we add the following line
     testOptions in Test := Nil)
 
 }
