@@ -13,6 +13,15 @@ models下有一些用Java定义的Ebean model, test下有一些用Scala写成的
 
 需要在Build.sbt中增加：
 
-    ebeanEnabled := true
+	ebeanEnabled := true
 
-我已经加了，但还是有同样的错误。
+加在这个位置：
+
+	val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
+	// Add your own project settings here
+	ebeanEnabled := true
+	)
+
+现在发现以下问题：
+
+1. 直接调用model中的field，会无法更新值。必须定义getter/setter，并且调用getter/setter，才能正常更新。这让代码相当繁琐
